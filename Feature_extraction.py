@@ -107,7 +107,7 @@ def main():
     df_long = pd.DataFrame(long_data)
 
     # Feature extraction
-    features = extract_features(df_long, column_id="TIC", column_sort="time", column_value="flux", n_jobs=8)
+    features = extract_features(df_long, column_id="TIC", column_sort="time", column_value="flux", n_jobs=32)
     features = impute(features)
 
     features = pd.merge(
@@ -118,7 +118,7 @@ def main():
     how='left'  # Keeps all rows from 'features'
 )
 
-    save_features_to_hdf5(features, "Global_features.h5")
+    save_features_to_hdf5(features, "/mnt/data/Global_features.h5")
 
 if __name__ == "__main__":
     main()
