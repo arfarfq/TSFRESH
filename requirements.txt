@@ -1,0 +1,6 @@
+h5py==3.11.0
+pandas==2.2.2
+numpy==1.26.4
+tsfresh==0.21.0
+scikit-learn==1.5.1
+xgboost==3.0.0
