@@ -51,11 +51,8 @@ def clean_loaded_data(local_inputs, global_inputs, labels, df_merged):
     return local_clean, global_clean, labels_clean, df_clean
 
 def save_features_to_hdf5(features, filename):
-    with h5py.File(filename, "w") as f:
-        # Convert features to a numpy array and save them
-        features_np = features.to_numpy()
-        f.create_dataset("features", data=features_np)
-        print(f"Features saved to {filename}")
+    features.to_hdf(filename, key="features", mode="w")
+    print(f"Features saved to {filename}")
 
 def main():
 
