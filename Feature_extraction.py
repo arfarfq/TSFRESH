@@ -51,7 +51,7 @@ def clean_loaded_data(local_inputs, global_inputs, labels, df_merged):
     return local_clean, global_clean, labels_clean, df_clean
 
 def save_features_to_hdf5(features, filename):
-    features.to_hdf(filename, key="features", mode="w")
+    features.to_csv(filename, index=False)
     print(f"Features saved to {filename}")
 
 def main():
